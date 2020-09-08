@@ -1,0 +1,53 @@
+.chat{
+    min-height: 120px;
+    min-width: 300px;
+    // width: ;
+    background-color: white;
+    border: 3px solid grey;
+    border-radius :20px;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    width: 30%;
+    right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    .chat-header{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        padding-left:10px ;
+        padding-right:40px ;
+        position: relative;
+        p{  
+            font-size: 16px;
+            text-align:left;
+            span{
+                font-size: 24px;
+            }
+        }
+        .open{
+           position: absolute;
+           right: 10px;
+        }
+
+    }
+    .chat-icons{
+        height: 77px;
+        border-radius: 0 0 17px 17px;
+        border: 3px solid rgb(66, 65, 65);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding:  0 20px;
+        img{
+            max-width: 100%;
+            height: 40px;
+            width: 40px;
+        }
+    }
+    
+}

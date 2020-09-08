@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html{
+  /*Now convert all px value into rem dependent on root font-size  */
+  /*font-size: 10px; */  /*Set root font-size is 10px because  calculate rem is easy 10px == 1rem*/
+  /*default root font size is 16px*/
+    font-size: 62.5%; /* (10/16) == 0.625 => 0.625*100 == 62.5%*/
+
+  // @include responsive(tab-land){  // width < 1200
+  //   font-size: 56.25%;         // 1 rem = 9px, 9/16 => 0.5625*100 = 56.25%
+  // }
+
+  @include responsive(tab-port){  // width < 600
+    font-size: 50%;         // 1 rem = 8px, 8/16 => 0.5*100 = 50%
+  }
+
+  //@include responsive(phone){  // width < 600
+  //  font-size: 56%;         // 1 rem = 8px, 8/16 => 0.5*100 = 50%
+  //}
+
+
+}
+
+
+body{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: $primary-font-family;
+  font-size: $text-font;
+  color : $text;
+}
+
+
+a, button{
+  color: inherit;
+  text-decoration: none;
+  &:focus,
+  &:active{
+    color: inherit;
+    outline: none;
+  }
+  &:hover{
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+ul{
+  list-style: none;
+  li{
+    display: inline-block;
+  }
+}
+
+input,
+button,
+p,
+form .form-control{
+  font-family: inherit;
+  font-size: 1.6rem;
+}
+
+.primary-font{
+  font-family: $primary-font-family !important;
+}
+
+.secondary-font{
+  font-family: $secondary-font-family !important;
+}

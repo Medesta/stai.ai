@@ -1,0 +1,47 @@
+.thumbnail{
+min-width:30vh ;
+min-height: 18vh;
+border: 3px solid white;
+border-radius: 20px;
+position: fixed;
+bottom: 20px;
+left: 20%;
+&.primary{
+   background-position:center;
+   background-size: cover;
+   background-repeat: no-repeat;
+    background-image: url('./../../Assets/Images/props/primary.png');
+}
+&.secondary{
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+     background-image: url('./../../Assets/Images/props/secondary.png');
+ }
+.marker{
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid black;
+    right: 0;
+    transform: translate(50% , -50%);
+    .yellow{
+        height: 7rem;
+        width: 7rem;
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('./../../Assets/Images/props/yellow.png');
+    }
+    .blue{
+        height: 7rem;
+        width: 7rem;
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('./../../Assets/Images/props/blue.png');
+    }
+}
+}

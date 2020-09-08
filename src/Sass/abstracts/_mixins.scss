@@ -1,0 +1,69 @@
+/* Media query manager breakpoint media
+
+Size                   Device                              breakpoint name
+
+0 - 600px;             Phone                               phone
+600 - 900px;           tablet portrait                     tab-port
+900 - 1200px;          tablet landscape                    tab-land
+1200 - 1800px;         is normal desktop size              -
+1800px + :             Big desktop size                    big-desktop
+
+1em = 16px*/
+
+@mixin responsive($breakpoint){
+
+
+  @if $breakpoint == sm{
+    @media only screen and (max-width: 36em) {@content}   
+  }
+
+  @if $breakpoint == phone{
+    @media only screen and (max-width: 37.5em) {@content}   
+  }
+
+  @if $breakpoint == md{
+    @media only screen and (max-width: 48em) {@content}   
+  }
+
+  @if $breakpoint == tab-port{
+    @media only screen and (max-width: 56.25em) {@content}  
+  }
+
+  @if $breakpoint == lg{
+    @media only screen and (max-width: 62em) {@content}  
+  }
+  @if $breakpoint == tab-land{
+    @media only screen and (max-width: 75em) {@content}    
+  }
+
+  @if $breakpoint == small-desktop{
+    @media only screen and (max-width: 96.87em) {@content}    
+  }
+
+  @if $breakpoint == big-desktop{
+    @media only screen and (min-width: 112.5em) {@content} 
+  }
+}
+
+
+@mixin font-awesome-icon($code){
+  content: $code;
+  font-family: 'Font Awesome 5 Free' !important;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+$default-position : 'center';
+@mixin bg-img($img, $pos : $default-position){
+  background-image: url($img);
+  background-position: $pos;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
