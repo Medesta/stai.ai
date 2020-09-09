@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "catenary-curve": "^1.0.1",
     "lazy-brush": "^1.0.1",
+    "rc-color-picker": "^1.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",

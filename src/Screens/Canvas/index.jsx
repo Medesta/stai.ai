@@ -27,7 +27,7 @@ class Demo extends Component {
 
     
   state = {
-    brushColor: rand(),
+    brushColor: this.props.selectedColor,
     canvasHeight: 800,
     canvasWidth: "100%",
     brushRadius: 6,
@@ -68,7 +68,7 @@ class Demo extends Component {
       // If we are clicking on a button, do not update anything
       if (e.target.name === 'clearbutton') return 
       this.setState({
-        brushColor: rand()
+        brushColor: this.props.selectedColor
       })
       const data = this.canvas.getSaveData()
       const p = JSON.parse(data)

@@ -1,5 +1,13 @@
 import React from 'react';
 import './Tools.scss';
+import ColorPicker from 'rc-color-picker'
+import 'rc-color-picker/assets/index.css';
+
+
+const changeHandler = (colors) => {
+    console.log(colors);
+}
+
 
 const Tools = (props) => {
     return (
@@ -16,15 +24,22 @@ const Tools = (props) => {
                             <img src={require("../../Assets/Images/tools/marker.png")} alt="tool" />
                         </button>
                     </div>
-                    <div>
-                        <button className="multi-color">
-                            <img src={require("../../Assets/Images/tools/marke1.png")} alt="tool" />
+                    <ColorPicker
+                        color={props.selectedColor}
+                        animation={"slide-up"}
+                        onChange={props.onChangeColor}
+                    >
+                        <div className="react-custom-trigger">
+                            <button className="multi-color">
+                                <img src={require("../../Assets/Images/tools/marke1.png")} alt="tool" />
 
-                        </button>
-                        <div className="palate ">
+                            </button>
+                            <div className="palate ">
 
+                            </div>
                         </div>
-                    </div>
+                    </ColorPicker>
+
                 </div>
                 <div className="tool-group">
                     <div>

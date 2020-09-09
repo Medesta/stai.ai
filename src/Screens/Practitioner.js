@@ -8,6 +8,17 @@ import Chat from '../Components/Chat/Chat';
 import Canvas from './Canvas/index';
 
 class Practitioner extends Component {
+    state = {
+        selectedColor: "red"
+    }
+
+    changeSelectedColor = ({ color }) => {
+        console.log(color)
+        this.setState({
+            selectedColor: color
+        })
+    }
+
     render() {
         return (
             <div className="practitioner">
@@ -16,9 +27,9 @@ class Practitioner extends Component {
                     color={'white'}
                     title={'The title I gave this activity'}
                 >
-                    <Canvas />
+                    <Canvas selectedColor={this.state.selectedColor} />
                 </Board>
-                <Tools />
+                <Tools selectedColor={this.state.selectedColor} onChangeColor={this.changeSelectedColor} />
                 <VideoThumbnail
                     bottom={'2%'}
                     left={'2%'}
