@@ -31,7 +31,7 @@ class Demo extends Component {
     canvasHeight: 800,
     canvasWidth: "100%",
     brushRadius: 6,
-    lazyRadius: 8
+    lazyRadius: 10
   }
 
   lineLength = 0
@@ -39,8 +39,8 @@ class Demo extends Component {
   clientId = uuid()
   canvasInfo = 'tempcanvas'
 
-  componentDidMount() {
-
+  componentDidMount() { 
+    this.props.canvasRef(this.clear);
     patientCursor = document.getElementById("patient-cursor");
     const canvas = {
       id: this.id,
@@ -49,7 +49,7 @@ class Demo extends Component {
         ...this.state,
         lines: [],
         cursor: []
-      }
+      } 
     }
     // Create the canvas. If canvas is already created, retrieve the data & draw previous canvas
     // API.graphql(graphqlOperation(createCanvas, { input: canvas }))
@@ -75,6 +75,8 @@ class Demo extends Component {
       const length = p.lines.length
       this.lineLength = length
 
+
+      console.log(data)
       const canvas = {
         id: this.id,
         clientId: this.clientId,
@@ -185,10 +187,11 @@ class Demo extends Component {
     return (
       <div>
        
-        <img  height="87" width="100" id="patient-cursor"src="https://stai-babylon-js-scenes.s3.amazonaws.com/Games/2d/hand/Therapist_pointing_Cursor.svg" />
-        <button name='clearbutton' onClick={this.clear}>Clear</button>
+        {/* <img  height="87" width="100" id="patient-cursor"src="https://stai-babylon-js-scenes.s3.amazonaws.com/Games/2d/hand/Therapist_pointing_Cursor.svg" />
+        <button name='clearbutton' onClick={this.clear}>Clear</button> */}
         <CanvasDraw
           {...this.state}
+          hideGrid={true}
           ref={canvas => this.canvas = canvas}
           
         />

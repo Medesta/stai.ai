@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Tools.scss';
 import ColorPicker from 'rc-color-picker'
 import 'rc-color-picker/assets/index.css';
@@ -8,6 +8,16 @@ const changeHandler = (colors) => {
     console.log(colors);
 }
 
+
+// const [name, changeName] = useState('')
+
+// this.state.name;
+
+// name
+
+
+
+// changeName("Haider");
 
 const Tools = (props) => {
     return (
@@ -43,7 +53,7 @@ const Tools = (props) => {
                 </div>
                 <div className="tool-group">
                     <div>
-                        <button>
+                        <button onClick={props.onClickRubber}>
                             <img src={require("../../Assets/Images/tools/high.png")} alt="tool" />
                         </button>
                     </div>
@@ -64,7 +74,7 @@ const Tools = (props) => {
                     </button>
                 </div>
                 <div className="tool-eraser">
-                    <button>
+                    <button onClick={props.onEraserClick}>
                         <img src={require("../../Assets/Images/tools/eraser.png")} alt="tool" />
                     </button>
                 </div>

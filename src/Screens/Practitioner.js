@@ -9,7 +9,9 @@ import Canvas from './Canvas/index';
 
 class Practitioner extends Component {
     state = {
-        selectedColor: "red"
+        selectedColor: "red",
+        rubberColor: "#fff",
+        isRubberSelected: false
     }
 
     changeSelectedColor = ({ color }) => {
@@ -19,7 +21,12 @@ class Practitioner extends Component {
         })
     }
 
+    setRef = (ref) => {
+        this.clearAll = ref
+    }
+
     render() {
+        const { selectedColor, rubberColor, isRubberSelected } = this.state;
         return (
             <div className="practitioner">
                 <Header />
@@ -27,10 +34,17 @@ class Practitioner extends Component {
                     color={'white'}
                     title={'The title I gave this activity'}
                 >
-                    <Canvas selectedColor={this.state.selectedColor} />
+                    <Canvas canvasRef={this.setRef} selectedColor={isRubberSelected ? rubberColor : selectedColor} />
                 </Board>
-                <Tools selectedColor={this.state.selectedColor} onChangeColor={this.changeSelectedColor} />
-                <VideoThumbnail
+                <Tools
+                    onEraserClick={() => this.clearAll()}
+                    selectedColor={selectedColor}
+                    onChangeColor={this.changeSelectedColor}
+                    onClickRubber={() => this.setState({
+                        isRubberSelected: true
+                    })}
+                />
+                {/* <VideoThumbnail
                     bottom={'2%'}
                     left={'2%'}
                     width={'40vh'}
@@ -48,7 +62,7 @@ class Practitioner extends Component {
                     height={'18vh'}
                     class={'secondary'}
                     marker={'blue'}
-                />
+                /> */}
 
             </div>
         )
