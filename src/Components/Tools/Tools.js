@@ -6,32 +6,52 @@ const Tools = (props) => {
         <div className="tools ">
             <div className="tool-box">
                 <div className="tool">
-                    <img src={require("../../Assets/Images/tools/text.png")} alt="tool" />
+                    <button>
+                        <img src={require("../../Assets/Images/tools/text.png")} alt="tool" />
+                    </button>
                 </div>
                 <div className="tool-group">
                     <div>
-                    <img src={require("../../Assets/Images/tools/marker.png")} alt="tool" />
+                        <button>
+                            <img src={require("../../Assets/Images/tools/marker.png")} alt="tool" />
+                        </button>
                     </div>
                     <div>
-                    <img src={require("../../Assets/Images/tools/marke1.png")} alt="tool" />
+                        <button className="multi-color">
+                            <img src={require("../../Assets/Images/tools/marke1.png")} alt="tool" />
+
+                        </button>
+                        <div className="palate ">
+
+                        </div>
                     </div>
                 </div>
                 <div className="tool-group">
                     <div>
-                    <img src={require("../../Assets/Images/tools/high.png")} alt="tool" />
+                        <button>
+                            <img src={require("../../Assets/Images/tools/high.png")} alt="tool" />
+                        </button>
                     </div>
                     <div>
-                    <img src={require("../../Assets/Images/tools/highlight.png")} alt="tool" />
+                        <button>
+                            <img src={require("../../Assets/Images/tools/highlight.png")} alt="tool" />
+                        </button>
                     </div>
                 </div>
                 <div className="tool ">
-                <img src={require("../../Assets/Images/tools/undo.png")} alt="tool" />
+                    <button>
+                        <img src={require("../../Assets/Images/tools/undo.png")} alt="tool" />
+                    </button>
                 </div>
                 <div className="tool">
-                <img src={require("../../Assets/Images/tools/redo.png")} alt="tool" />
+                    <button>
+                        <img src={require("../../Assets/Images/tools/redo.png")} alt="tool" />
+                    </button>
                 </div>
                 <div className="tool-eraser">
-                <img src={require("../../Assets/Images/tools/eraser.png")} alt="tool" />
+                    <button>
+                        <img src={require("../../Assets/Images/tools/eraser.png")} alt="tool" />
+                    </button>
                 </div>
             </div>
 
